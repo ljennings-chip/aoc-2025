@@ -70,7 +70,8 @@ func solve(filename string) (int, int) {
 		} else { // 'L'
 			// Moving left is trickier, as we need to counteract Go division truncating towards zero.
 			// We handle this by calculating two terms and subtracting them.
-			// The first term (curPos-size)/size
+			// The first term (curPos-size)/size handles moving left from 0
+			// The second term (curPos-num-size+1)/size handles a negative target
 			//
 			// Example
 			// loops = (curPos-size)/size - (curPos-num-size+1)/size
