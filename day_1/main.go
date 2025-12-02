@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"time"
 )
 
 func main() {
@@ -13,6 +14,7 @@ func main() {
 func solve(filename string) (int, int) {
 	data, _ := os.ReadFile(filename)
 
+	start := time.Now()
 	curPos := 50
 	directZeroCount := 0
 	indirectZeroCount := 0
@@ -94,6 +96,7 @@ func solve(filename string) (int, int) {
 		indirectZeroCount += loops
 	}
 
+	fmt.Println("Time elapsed:", time.Since(start))
 	// directZero count is the answer for part 1
 	// indirectZeroCount is the answer for part 2
 	return directZeroCount, indirectZeroCount + directZeroCount
