@@ -77,8 +77,6 @@ func isPeriodic(s string) bool {
 func isTwiceRepeating(id string) bool {
 	n := len(id)
 	if n%2 != 0 {
-		// Knowing a string can only be twice repeated if it's even length
-		// means we can exit early.
 		return false
 	}
 
